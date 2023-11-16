@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "template-api"
+name = "budget-api"
 version = "0.1.0"
 description = ""
 authors = ["Arthur Moreira de Deus <arthurdedeus@gmail.com>"]
