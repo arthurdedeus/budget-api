@@ -1,0 +1,87 @@
+[tool.poetry]
+name = "template-api"
+version = "0.1.0"
+description = ""
+authors = ["Arthur Moreira de Deus <arthurdedeus@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+asgiref = "3.7.2"
+build = "1.0.3"
+CacheControl = "0.13.1"
+certifi = "2023.7.22"
+cffi = "1.16.0"
+charset-normalizer = "3.3.2"
+cleo = "2.1.0"
+crashtest = "0.4.1"
+distlib = "0.3.7"
+Django = "5.0b1"
+djangorestframework = "3.14.0"
+dulwich = "0.21.6"
+fastjsonschema = "2.19.0"
+filelock = "3.13.1"
+idna = "3.4"
+importlib-metadata = "6.8.0"
+installer = "0.7.0"
+keyring = "24.3.0"
+more-itertools = "10.1.0"
+msgpack = "1.0.7"
+packaging = "23.2"
+pexpect = "4.8.0"
+pkginfo = "1.9.6"
+platformdirs = "3.11.0"
+poetry = "1.7.0"
+poetry-core = "1.8.1"
+poetry-plugin-export = "1.6.0"
+ptyprocess = "0.7.0"
+pycparser = "2.21"
+pyproject_hooks = "1.0.0"
+pytz = "2023.3.post1"
+rapidfuzz = "3.5.2"
+requests = "2.31.0"
+requests-toolbelt = "1.0.0"
+shellingham = "1.5.4"
+sqlparse = "0.4.4"
+tomlkit = "0.12.3"
+trove-classifiers = "2023.11.14"
+urllib3 = "2.1.0"
+virtualenv = "20.24.6"
+xattr = "0.10.1"
+zipp = "3.17.0"
+python = "^3.11"
+django-environ = "^0.11.2"
+psycopg2 = "^2.9.9"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+ruff = "0.1.5"
+
+[tool.ruff]
+exclude = [
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "DJ", "S", "C90"]
+ignore = []
+
+fixable = ["ALL"]
+unfixable = []
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
