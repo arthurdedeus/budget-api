@@ -19,7 +19,6 @@ try:
     environ.Env.read_env(env_file=".env")
 except FileNotFoundError:
     print("Did not find .env file")
-    pass
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "credit_card",
 ]
 
 MIDDLEWARE = [
