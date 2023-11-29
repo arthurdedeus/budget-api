@@ -54,7 +54,7 @@ psycopg2 = "^2.9.9"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.5.0"
-ruff = "0.1.5"
+ruff = "0.1.6"
 
 [tool.ruff]
 exclude = [
