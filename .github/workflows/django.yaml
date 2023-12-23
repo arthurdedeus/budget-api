@@ -26,6 +26,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry==1.7.0
         poetry install
+    - name: Spin up DB
+      run: docker-compose up -d
+    - name: Check DB
+      run: |
+        wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.6.1.tar.gz && rm dockerize-linux-amd64-v0.6.1.tar.gz
+        dockerize -wait tcp://localhost:5432 -timeout 1m
+    - name: Check manage.py
+      run: poetry run python manage.py check
+    - name: Check migrations
+      run: poetry run python manage.py makemigrations --check
+    - name: Apply migrations
+      run: poetry run python manage.py migrate
     - name: Run Tests
       run: |
         poetry run python manage.py test

@@ -19,7 +19,6 @@ try:
     environ.Env.read_env(env_file=".env")
 except FileNotFoundError:
     print("Did not find .env file")
-    pass
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "credit_card",
 ]
 
 MIDDLEWARE = [
@@ -87,8 +87,8 @@ WSGI_APPLICATION = "settings.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME", default="template-api-db"),
-        "USER": env("DB_USER", default="template-api"),
+        "NAME": env("DB_NAME", default="budget-api-db"),
+        "USER": env("DB_USER", default="budget-api"),
         "PASSWORD": env("DB_PASSWORD", default="badaras"),
         "HOST": env("DB_HOST", default="localhost"),
         "PORT": env("DB_PORT", default=5432),

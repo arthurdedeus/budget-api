@@ -6,9 +6,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      - POSTGRES_DB=budget-api-db
+      - POSTGRES_USER=budget-api
+      - POSTGRES_PASSWORD=badaras
+      - PGDATA=/var/lib/postgresql/data/pgdata/
     ports:
       - "5432:5432"
 
