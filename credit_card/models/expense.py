@@ -16,4 +16,5 @@ class Expense(models.Model):
     date = models.DateField()
     description = models.CharField(max_length=128)
     amount = models.IntegerField()
-    installments = models.IntegerField(default=1)
+    total_installments = models.IntegerField(default=1)
+    installment = models.IntegerField(default=1)
