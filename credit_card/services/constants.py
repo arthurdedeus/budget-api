@@ -1,0 +1,9 @@
+LAST_4_DIGITS = "Final do Cartão"
+NAME = "Nome no Cartão"
+DATE = "Data de Compra"
+CATEGORY = "Categoria"
+DESCRIPTION = "Descrição"
+INSTALLMENT = "Parcela"
+AMOUNT = "Valor (em R$)"
+
+STATEMENT_COLUMNS = [LAST_4_DIGITS, NAME, DATE, CATEGORY, DESCRIPTION, INSTALLMENT, AMOUNT]
