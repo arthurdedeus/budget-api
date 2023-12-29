@@ -5,7 +5,7 @@ from django_factory_boy.auth import UserFactory
 from credit_card.factories.credit_card import CreditCardFactory
 from credit_card.factories.expense_category import ExpenseCategoryFactory
 from credit_card.models import CreditCard, Expense, ExpenseCategory
-from credit_card.services.constants import LAST_4_DIGITS
+from credit_card.services.constants import C6BankStatementColumns
 from credit_card.services.statement_import import StatementImportService
 
 GAMBLING = "Gambling"
@@ -106,5 +106,5 @@ class ImportServiceTestCase(TestCase):
         result = StatementImportService._group_by_credit_card(self.raw_file)
 
         self.assertEqual(self.raw_file.shape, (9, 9))
-        self.assertEqual(self.raw_file[LAST_4_DIGITS].nunique(), 2)
+        self.assertEqual(self.raw_file[C6BankStatementColumns.LAST_4_DIGITS].nunique(), 2)
         self.assertEqual(result.shape, (2, 7))

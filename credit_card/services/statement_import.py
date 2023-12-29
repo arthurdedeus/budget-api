@@ -4,23 +4,16 @@ from datetime import datetime
 import pandas as pd
 
 from credit_card.models import CreditCard, Expense, ExpenseCategory
-from credit_card.services.constants import (
-    AMOUNT,
-    CATEGORY,
-    DATE,
-    DESCRIPTION,
-    INSTALLMENT,
-    LAST_4_DIGITS,
-    NAME,
-    STATEMENT_COLUMNS,
-)
+from credit_card.services.constants import C6BankStatementColumns
 
 logger = logging.getLogger(__name__)
 
 
 class StatementImportService:
+    columns = C6BankStatementColumns
+
     def __init__(self, user, filename):
-        self.file = pd.read_csv(filename, sep=";", header=0, usecols=STATEMENT_COLUMNS)
+        self.file = pd.read_csv(filename, sep=";", header=0, usecols=self.columns.list())
         self.user = user
 
     def process_file(self):
@@ -41,11 +34,11 @@ class StatementImportService:
     def _create_expenses(self, card, row):
         objects_to_create = []
         for date, category, description, installments, amount in zip(
-            row[DATE],
-            row[CATEGORY],
-            row[DESCRIPTION],
-            row[INSTALLMENT],
-            row[AMOUNT],
+            row[self.columns.DATE],
+            row[self.columns.CATEGORY],
+            row[self.columns.DESCRIPTION],
+            row[self.columns.INSTALLMENT],
+            row[self.columns.AMOUNT],
         ):
             installment, total_installments = self._parse_installments(installments)
             expense = Expense(
@@ -96,6 +89,5 @@ class StatementImportService:
             logger.info("No installment value", extra={"installments": installments}, exc_info=True)
             return 1, 1
 
-    @staticmethod
-    def _group_by_credit_card(file):
-        return file.groupby([LAST_4_DIGITS, NAME]).agg(list)
+    def _group_by_credit_card(self, file):
+        return file.groupby([self.columns.LAST_4_DIGITS, self.columns.NAME]).agg(list)
