@@ -103,7 +103,7 @@ class ImportServiceTestCase(TestCase):
                 self.assertEqual(result_total_installments, expected_total_installments)
 
     def test_group_by_credit_card(self):
-        result = StatementImportService._group_by_credit_card(self.raw_file)
+        result = self.svc._group_by_credit_card(self.raw_file)
 
         self.assertEqual(self.raw_file.shape, (9, 9))
         self.assertEqual(self.raw_file[C6BankStatementColumns.LAST_4_DIGITS].nunique(), 2)
