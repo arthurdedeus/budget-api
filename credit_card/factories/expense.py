@@ -18,4 +18,5 @@ class ExpenseFactory(factory.django.DjangoModelFactory):
     date = LazyAttribute(lambda _: faker.date())
     description = LazyAttribute(lambda _: faker.word())
     amount = LazyAttribute(lambda _: faker.random_int(min=1, max=999999))
-    installments = LazyAttribute(lambda _: faker.random_int(min=1, max=12))
+    installment = LazyAttribute(lambda _: faker.random_int(min=1, max=12))
+    total_installments = LazyAttribute(lambda obj: faker.random_int(min=obj.installment, max=12))
