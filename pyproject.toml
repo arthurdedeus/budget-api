@@ -57,7 +57,7 @@ factory-boy = "^3.3.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.5.0"
-ruff = "0.1.6"
+ruff = "0.1.9"
 
 [tool.ruff]
 exclude = [
