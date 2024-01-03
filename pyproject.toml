@@ -58,7 +58,7 @@ pandas = "^2.1.4"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.0"
-ruff = "0.1.9"
+ruff = "0.1.11"
 
 [tool.ruff]
 exclude = [
