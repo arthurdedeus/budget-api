@@ -1392,13 +1392,13 @@ files = [
 
 [[package]]
 name = "trove-classifiers"
-version = "2023.11.29"
+version = "2024.2.22"
 description = "Canonical source for classifiers on PyPI (pypi.org)."
 optional = false
 python-versions = "*"
 files = [
-    {file = "trove-classifiers-2023.11.29.tar.gz", hash = "sha256:ff8f7fd82c7932113b46e7ef6742c70091cc63640c8c65db00d91f2e940b9514"},
-    {file = "trove_classifiers-2023.11.29-py3-none-any.whl", hash = "sha256:02307750cbbac2b3d13078662f8a5bf077732bf506e9c33c97204b7f68f3699e"},
+    {file = "trove-classifiers-2024.2.22.tar.gz", hash = "sha256:458650355240a16a98bb430ddac088412af48a86093d400206f09030eb595e8a"},
+    {file = "trove_classifiers-2024.2.22-py3-none-any.whl", hash = "sha256:42d63b69107462dfbfb2b0ce01f8738ca7900b89cfa7dc5478f0ce557ca22adb"},
 ]
 
 [[package]]
@@ -1550,4 +1550,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bd6612dc7eb5cec0d0e113a422c4bd3968586bed8ff21e8f24934256124cf324"
+content-hash = "dc89459e5cd932b080b3d751102596f243be522989df18b2baef4b949a544a68"
